@@ -5,26 +5,27 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static ScoreManager instance;
+    public static ScoreManager Instance { get; private set;}
+    public static int scoreValue = 0;
+    Text score;
 
-    public Text scoreText;
-
-    int score = 0;
-
-    public void Awake()
+    void Awake()
     {
-        instance = this;
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else if(Instance != this)
+        {
+            Destroy(this);
+        }
+        score = GetComponent<Text>();
     }
 
-    // Start is called before the first frame update
-    void Start()
+
+    void Update()
     {
-        scoreText.text = scoreText.ToString() + "POINTS";
+        score.text = "Score: " + scoreValue;
     }
 
-   public void AddPoint()
-    {
-        score += 1;
-        scoreText.text = scoreText.ToString() + "POINTS";
-    }
 }
