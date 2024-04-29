@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - Game Music
   - Stadium
+  - HealthObject
+  - 1P
+  - 2P
   layers:
   - Default
   - TransparentFX

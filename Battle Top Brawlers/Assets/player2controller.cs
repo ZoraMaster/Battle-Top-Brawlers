@@ -2,20 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
-
-public class PlayerController : MonoBehaviour
+public class player2controller : MonoBehaviour
 {
-    PlayerController Player;
+    player2controller Player;
     public AudioSource clangSound;
     public int maxhealth = 100;
     public int currentHealth;
     public int playerDamage = 10;
     public HealthBar healthBar;
+    public InputAction moveInput2P;
+    Vector3 moveDirection;
 
     [SerializeField] private Rigidbody playerBody;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float pushForce;
+
+    private void OnEnable()
+    {
+        moveInput2P.Enable();
+    }
+
+    private void OnDisable()
+    {
+        moveInput2P.Disable();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +42,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        moveDirection = moveInput2P.ReadValue<Vector3>();
 
         if (transform.position.y < 700)
         {
@@ -36,17 +50,12 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene("GameOver");
         }
     }
-
     void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-
-        playerBody.AddForce(movement * moveSpeed);
+        playerBody.AddForce(moveDirection * moveSpeed);
     }
 
-    public void TakeDamageFromE(int damage)
+    public void TakeDamageFrom1P(int damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
@@ -69,11 +78,11 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("1P"))
         {
             PushPlayerAway(collision.contacts[0].point, pushForce);
 
-            collision.gameObject.GetComponent<EnemyController>().TakeDamageFromP(playerDamage);
+            collision.gameObject.GetComponent<player1controller>().TakeDamageFrom2P(playerDamage);
             clangSound.Play();
         }
     }

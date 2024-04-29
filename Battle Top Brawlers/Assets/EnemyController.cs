@@ -10,19 +10,23 @@ public class EnemyController : MonoBehaviour
     public int currentHealth;
     public int enemyDamage = 10;
     private Rigidbody enemyRb; 
-    private GameObject player;
-    public float speed = 25;
+    private Transform playerTransform;
+    public float movementSpeed;
+    [SerializeField] private float pushForce;
 
     void Start()
     {
         currentHealth = maxHealth;
         enemyRb = GetComponent<Rigidbody>();
-        player = GameObject.Find("Player");
+        playerTransform = GameObject.Find("Player").transform;
+        pushForce = 500f;
+        movementSpeed = 50f;
+        enemyRb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
     }
 
     private void Update()
     {
-        if (transform.position.y < 1)
+        if (transform.position.y < 700)
         {
             ScoreManager.scoreValue += 10;
             Die();
@@ -31,8 +35,11 @@ public class EnemyController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 lookDirection = (player.transform.position - transform.position).normalized;
-        enemyRb.AddForce(2 * speed * lookDirection);
+        Vector3 directionToPlayer = (playerTransform.position - transform.position).normalized;
+        directionToPlayer.y = 0; // Keep the enemy on the same plane as the player
+
+        // Move the enemy towards the player
+        transform.position += directionToPlayer * movementSpeed * Time.deltaTime;
     }
 
     public void TakeDamageFromP(int amount)
@@ -45,12 +52,22 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            PushEnemyAway(collision.contacts[0].point);
             collision.gameObject.GetComponent<PlayerController>().TakeDamageFromE(enemyDamage);
         }
+    }
+
+    private void PushEnemyAway(Vector3 collisionPoint)
+    {
+        // Calculate the direction to push the enemy
+        Vector3 pushDirection = (transform.position - collisionPoint);
+
+        // Apply force to the enemy
+        enemyRb.AddForce(pushDirection.normalized * pushForce, ForceMode.Impulse);
     }
 
     public void Die()
