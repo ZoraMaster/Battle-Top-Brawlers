@@ -191,6 +191,71 @@ MonoBehaviour:
   currentHealth: 0
   playerDamage: 10
   healthBar: {fileID: 0}
+  moveInput1P:
+    m_Name: Move Input 1P
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: a160a2c6-5dcf-4042-beb1-0f7f6324975c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: WASD
+      m_Id: 75887596-0ea9-4d7c-afaa-d1da3c54bfd0
+      m_Path: 3DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input 1P
+      m_Flags: 4
+    - m_Name: up
+      m_Id: bf0dbb63-b953-41e0-84b0-f75352147c68
+      m_Path: 
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input 1P
+      m_Flags: 8
+    - m_Name: down
+      m_Id: c7a4e457-ecd7-4ec3-ab98-b1669065f52d
+      m_Path: 
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input 1P
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 4552abba-ba6d-488d-9a98-868d45c8b8d4
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input 1P
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 37c54ba3-b817-486b-9b2d-08c83a420783
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input 1P
+      m_Flags: 8
+    - m_Name: forward
+      m_Id: 96446a82-a679-4d94-a5ba-06406dabfc0b
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input 1P
+      m_Flags: 8
+    - m_Name: backward
+      m_Id: 2fd25087-6687-432a-9052-321983fcad1d
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input 1P
+      m_Flags: 8
+    m_Flags: 0
   playerBody: {fileID: 2728634452773262176}
   moveSpeed: 0
   pushForce: 0

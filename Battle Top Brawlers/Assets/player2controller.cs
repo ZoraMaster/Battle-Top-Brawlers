@@ -36,8 +36,8 @@ public class player2controller : MonoBehaviour
         currentHealth = maxhealth;
         healthBar.SetMaxHealth(maxhealth);
         playerBody = GetComponent<Rigidbody>();
-        pushForce = 100f;
-        moveSpeed = 50f;
+        pushForce = 40f;
+        moveSpeed = 25f;
     }
 
     private void Update()
@@ -47,7 +47,7 @@ public class player2controller : MonoBehaviour
         if (transform.position.y < 700)
         {
             Destroy(Player);
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("Player1wins");
         }
     }
     void FixedUpdate()
@@ -62,7 +62,7 @@ public class player2controller : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(Player);
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("Player1wins");
         }
     }
 
