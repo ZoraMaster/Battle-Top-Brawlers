@@ -25,7 +25,5 @@
   - Includes music from *Beyblade Burst Evolution*  
 
 ## ⚖️ License  
-Since the game includes copyrighted music from *Beyblade Burst Evolution*, distributing it publicly may require permission from the copyright holders. If this is for personal use or a fan project, you might consider adding:  
-
-> **"This project is for educational and non-commercial purposes. All rights to the music belong to their respective owners."**  
+- **"This project is for educational and non-commercial purposes. All rights to the music belong to their respective owners."**  
 
