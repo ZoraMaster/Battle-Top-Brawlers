@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 157128842}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb6bbc15f2a20c04a8f13126dd13c5cb, type: 3}
+  m_Script: {fileID: 11500000, guid: fe7878abd2cb0e046a9ab454ffa4b2e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &183323831
@@ -346,7 +346,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 303db504e6effe24693f4ec13be13abb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 32d409974bc862b40a954d38ea268a2b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -479,7 +479,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9effd66a914a1714f878c9d9f46fa0e2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 06a970defdca4974dae864ed8cd541a0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -715,7 +715,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1794438337}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b63aa99dd04543d4584ee29e1fe861a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 559c3645d1d1a2a468a50699871d7111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1983719366
@@ -893,7 +893,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -16, y: 266}
+  m_AnchoredPosition: {x: 15, y: 24}
   m_SizeDelta: {x: 1222.2606, y: 279.6512}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2079838533
@@ -909,7 +909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.0041310787, a: 1}
+  m_Color: {r: 1, g: 0.15016605, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -919,7 +919,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 84
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 84
@@ -929,9 +929,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Player 2 Wins
-
-    Victory for Thunder Hercules'
+  m_Text: Game Over...
 --- !u!222 &2079838534
 CanvasRenderer:
   m_ObjectHideFlags: 0

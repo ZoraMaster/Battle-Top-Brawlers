@@ -3,42 +3,47 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class PlayerController : MonoBehaviour
 {
-    PlayerController Player;
     public AudioSource clangSound;
     public int maxhealth = 100;
     public int currentHealth;
     public int playerDamage = 10;
     public HealthBar healthBar;
 
-    [SerializeField] private Rigidbody playerBody;
+    [SerializeField] private Rigidbody playerBody; // Keep it private and assign in Start()
     [SerializeField] private float moveSpeed;
     [SerializeField] private float pushForce;
-    // Start is called before the first frame update
+
     void Start()
     {
         clangSound = GetComponent<AudioSource>();
         currentHealth = maxhealth;
         healthBar.SetMaxHealth(maxhealth);
-        playerBody = GetComponent<Rigidbody>();
-        pushForce = 100f;
         moveSpeed = 50f;
+        pushForce = 100f;
+        
+        // Ensure Rigidbody is assigned
+        playerBody = GetComponent<Rigidbody>();
+        if (playerBody == null)
+        {
+            Debug.LogError("Rigidbody is missing from the Player GameObject!");
+        }
     }
 
     private void Update()
     {
-
         if (transform.position.y < 700)
         {
-            Destroy(Player);
+            Destroy(gameObject); // Fix incorrect reference
             SceneManager.LoadScene("GameOver");
         }
     }
 
     void FixedUpdate()
     {
+        if (playerBody == null) return; // Prevents crash if Rigidbody is missing
+
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
@@ -52,18 +57,16 @@ public class PlayerController : MonoBehaviour
         healthBar.SetHealth(currentHealth);
         if (currentHealth <= 0)
         {
-            Destroy(Player);
+            Destroy(gameObject); // Fix incorrect reference
             SceneManager.LoadScene("GameOver");
         }
     }
 
-    // Function to push the player away from the collision point
     public void PushPlayerAway(Vector3 collisionPoint, float pushForce)
     {
-        // Calculate the direction to push the player
-        Vector3 pushDirection = transform.position - collisionPoint;
+        if (playerBody == null) return; // Prevents crash if Rigidbody is missing
         
-        // Apply force to the player
+        Vector3 pushDirection = transform.position - collisionPoint;
         playerBody.AddForce(pushDirection.normalized * pushForce, ForceMode.Impulse);
     }
 
@@ -72,7 +75,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             PushPlayerAway(collision.contacts[0].point, pushForce);
-
             collision.gameObject.GetComponent<EnemyController>().TakeDamageFromP(playerDamage);
             clangSound.Play();
         }
