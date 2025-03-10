@@ -176,12 +176,13 @@ GameObject:
   - component: {fileID: 7935107877515500375}
   - component: {fileID: 7935107877515500372}
   - component: {fileID: 4845359296629216973}
-  - component: {fileID: 3601149472745943797}
   - component: {fileID: 2772666118701062674}
   - component: {fileID: 7124205616080396406}
+  - component: {fileID: -9113645460395572008}
+  - component: {fileID: 3469352648748253065}
   m_Layer: 0
-  m_Name: Player
-  m_TagString: Untagged
+  m_Name: Player1
+  m_TagString: 1P
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -380,26 +381,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3601149472745943797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7124205616080396407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55f203054f1f538489639fc8262a3aa8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clangSound: {fileID: 0}
-  maxhealth: 100
-  currentHealth: 0
-  playerDamage: 10
-  healthBar: {fileID: 0}
-  playerBody: {fileID: 7935107877515500375}
-  moveSpeed: 0
-  pushForce: 0
 --- !u!114 &2772666118701062674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,6 +413,104 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-9113645460395572008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7124205616080396407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b220d6371258e3c43a1c24f03a437207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clangSound: {fileID: 4845359296629216973}
+  maxhealth: 100
+  currentHealth: 0
+  playerDamage: 10
+  healthBar: {fileID: 0}
+  moveInput1P:
+    m_Name: Move Input 1P
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: aa057221-271d-4d2a-8f38-c58f43ede6a5
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 3D Vector
+      m_Id: 988534f4-40f3-42c2-8c5e-0c706ac8cf1c
+      m_Path: 3DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input 1P
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 946d3036-4210-4e48-9ea2-7697b7bd4ffb
+      m_Path: 
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input 1P
+      m_Flags: 8
+    - m_Name: down
+      m_Id: f97911d3-b033-4a96-9163-53fbd344a13f
+      m_Path: 
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input 1P
+      m_Flags: 8
+    - m_Name: left
+      m_Id: f14145cb-d2a7-4e5c-81e3-92a8e2f2c5fa
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input 1P
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 39407fda-05ff-49eb-a36b-609ab81b1330
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input 1P
+      m_Flags: 8
+    - m_Name: forward
+      m_Id: f913ee02-8d1a-486a-9567-96eb25c21080
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input 1P
+      m_Flags: 8
+    - m_Name: backward
+      m_Id: 2bfc43b4-01d8-4cdb-8097-5eed851c77fe
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input 1P
+      m_Flags: 8
+    m_Flags: 0
+  playerBody: {fileID: 7935107877515500375}
+  moveSpeed: 50
+  pushForce: 50
+--- !u!114 &3469352648748253065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7124205616080396407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dc866032eee83f49be4fd0297dcec09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedMaterial: 17
 --- !u!1 &7408071365918914894
 GameObject:
   m_ObjectHideFlags: 0
