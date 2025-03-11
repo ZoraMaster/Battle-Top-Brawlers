@@ -14,9 +14,8 @@ GameObject:
   - component: {fileID: 5102941524243124838}
   - component: {fileID: 5102941524243124837}
   - component: {fileID: 5102941524243124839}
-  - component: {fileID: 5102941524243124832}
-  - component: {fileID: 5102941524243124833}
   - component: {fileID: 5102941524243124834}
+  - component: {fileID: -5882406240831962477}
   m_Layer: 0
   m_Name: Player2
   m_TagString: 2P
@@ -200,34 +199,6 @@ MonoBehaviour:
       m_Flags: 8
     m_Flags: 0
   playerBody: {fileID: 5102941524243124838}
-  moveSpeed: 35
-  pushForce: 65
---- !u!114 &5102941524243124832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5336804687634444106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dc866032eee83f49be4fd0297dcec09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectedMaterial: 17
---- !u!114 &5102941524243124833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5336804687634444106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4120dcdd33db0440978000a1616b11a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bound: 3
 --- !u!82 &5102941524243124834
 AudioSource:
   m_ObjectHideFlags: 0
@@ -324,6 +295,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &-5882406240831962477
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5336804687634444106}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9115a7c4c8ebfb54b96d18c4dfe1a2f9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8388061916048727067
 GameObject:
   m_ObjectHideFlags: 0

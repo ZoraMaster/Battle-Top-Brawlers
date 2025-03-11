@@ -1,9 +1,9 @@
 using System.Collections;
- using System.Collections.Generic;
- using UnityEngine;
- using UnityEngine.SceneManagement;
- using UnityEngine.InputSystem;
- 
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
+
 
 public class player1controller : MonoBehaviour
 {
@@ -19,8 +19,8 @@ public class player1controller : MonoBehaviour
     Vector3 moveDirection;
 
     [SerializeField] private Rigidbody playerBody;
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float pushForce;
+    private float moveSpeed = 50f;
+    private float pushForce = 50f;
 
     private void OnEnable()
     {
@@ -39,8 +39,6 @@ public class player1controller : MonoBehaviour
         currentHealth = maxhealth;
         healthBar.SetMaxHealth(maxhealth);
         playerBody = GetComponent<Rigidbody>();
-        pushForce = 80f;
-        moveSpeed = 60f;
     }
 
     private void Update()

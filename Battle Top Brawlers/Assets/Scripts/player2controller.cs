@@ -14,10 +14,11 @@ public class player2controller : MonoBehaviour
     public HealthBar healthBar;
     public InputAction moveInput2P;
     Vector3 moveDirection;
+    
+    private float moveSpeed = 40f;
+    private float pushForce = 80f;
 
     [SerializeField] private Rigidbody playerBody;
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float pushForce;
 
     private void OnEnable()
     {
@@ -36,8 +37,6 @@ public class player2controller : MonoBehaviour
         currentHealth = maxhealth;
         healthBar.SetMaxHealth(maxhealth);
         playerBody = GetComponent<Rigidbody>();
-        pushForce = 40f;
-        moveSpeed = 25f;
     }
 
     private void Update()
