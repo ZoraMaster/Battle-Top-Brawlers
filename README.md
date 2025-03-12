@@ -1,20 +1,20 @@
 # Battle Top Brawlers  
 
 ## 🏆 About  
-*Battle Top Brawlers* is a fast-paced battle/action game where players take control of the Battle Top: **Golden Charybdis** to defeat cloned versions of **Thunder Hercules** and survive as long as possible.  
+*Battle Top Brawlers* is a fast-paced, two-player PvP action game where you must knock your opponent's Battle Top out of the stadium or reduce their stamina to zero to claim victory.  
 
 ## 🎮 Features  
-- **Highscore System** – Compete against yourself and aim for the highest score.  
-- **Endless Enemies** – Survive against an ever-growing challenge.  
-- **Self-Made Assets** – Custom-designed visuals and mechanics.  
-- **Copyrighted Music** – Features music from *Beyblade Burst Evolution*.  
+- **Local Multiplayer** – Battle against a friend on the same device.  
+- **PvP Combat** – Outsmart and outmaneuver your opponent.  
+- **Health Drop System** – Recover stamina mid-battle to stay in the fight.  
 
 ## 🛠 Installation  
 - Requires **Unity** to play or modify.  
 - Clone or download this repository and open it in Unity.  
 
 ## 🎮 Controls  
-- **WASD** – Movement  
+- **WASD** – Player 1 Movement  
+- **Arrow Keys** – Player 2 Movement  
 
 ## 🎵 Credits  
 - **Developer & Artist** – Xavier Floyd  
@@ -25,5 +25,6 @@
   - Includes music from *Beyblade Burst Evolution*  
 
 ## ⚖️ License  
+
 - **"This project is for educational and non-commercial purposes. All rights to the music belong to their respective owners."**  
 
