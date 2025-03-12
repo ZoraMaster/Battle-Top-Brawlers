@@ -7,6 +7,8 @@
 - **Local Multiplayer** – Battle against a friend on the same device.  
 - **PvP Combat** – Outsmart and outmaneuver your opponent.  
 - **Health Drop System** – Recover stamina mid-battle to stay in the fight.  
+- **Self-Made Assets** – Custom-designed visuals and mechanics.  
+- **Copyrighted Music** – Features music from *Beyblade Burst Evolution*.  
 
 ## 🛠 Installation  
 - Requires **Unity** to play or modify.  
